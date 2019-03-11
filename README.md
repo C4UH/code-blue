@@ -1,3 +1,13 @@
+# Docker setup
+
+Just build and deplot using compose in the directory using this command
+
+`docker-compose up -d --build`
+
+open localhost:4200
+
+
+
 # SmartApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
