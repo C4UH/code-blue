@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 
 # SMART-on-FHIR-App-to-pull-PDMP
 SMART-on-FHIR App to pull PDMP
+
+# Docker setup
+
+Just build and deplot using compose in the directory using this command
+
+`docker-compose up -d --build`
+
+open localhost:4200
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
