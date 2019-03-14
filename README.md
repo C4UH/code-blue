@@ -1,4 +1,6 @@
-# SmartApp
+
+# SMART-on-FHIR-App-to-pull-PDMP
+SMART-on-FHIR App to pull PDMP
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
