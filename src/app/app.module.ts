@@ -1,18 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+// Components
+import {AppComponent} from './app.component';
+import {ReportComponent} from './report/report.component';
+import {FindComponent} from './find/find.component';
+
+// Services
+import {FhirService} from './service/fhir.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReportComponent,
+    FindComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [FhirService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
