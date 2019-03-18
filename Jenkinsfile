@@ -13,7 +13,7 @@ pipeline{
                         //Params to -f are location of Dockerfile in project directory and context to run the Dockerfile
                         //The example below looks for a Dockerfile in the same directory as this Jenkinsfile and runs the Dockerfile from the current directory
                         //Please change MY_IMAGE_NAME to something that identifies your project
-                        def myImage = docker.build("pdmp_smart_on_fhir:${env.BUILD_NUMBER}", "-f ./Dockerfile .")
+                        def myImage = docker.build("pdmp-smart-on-fhir:${env.BUILD_NUMBER}", "-f ./Dockerfile .")
                         //push image to docker registry
                         myImage.push("${env.BUILD_NUMBER}")
                     }
@@ -27,7 +27,7 @@ pipeline{
                     //Notify rancher to pull down the image
                     //UNIQUE_NAME_FOR_SERVICE_STACK/NAME_FOR_CONTAINER tells rancher to create a service stack in the swarm named UNIQUE_NAME_FOR_SERVICE_STACK that contains your application container named NAME_FOR_CONTAINER 
                     //Please change UNIQUE_NAME_FOR_SERVICE_STACK/NAME_FOR_CONTAINER to something unique for your project
-                    rancher confirm: true, credentialId: 'rancher-server', endpoint: 'https://rancher.hdap.gatech.edu/v2-beta', environmentId: '1a7', environments: '', image: "build.hdap.gatech.edu/pdmp_smart_on_fhir:${env.BUILD_NUMBER}", ports: '', service: 'pdmp_smart_on_fhir_service/pdmp_smart_on_fhir', timeout: 60
+                    rancher confirm: true, credentialId: 'rancher-server', endpoint: 'https://rancher.hdap.gatech.edu/v2-beta', environmentId: '1a7', environments: '', image: "build.hdap.gatech.edu/pdmp-smart-on-fhir:${env.BUILD_NUMBER}", ports: '', service: 'pdmp-smart-on-fhir-service/pdmp-smart-on-fhir', timeout: 60
                 }
             }
         }
