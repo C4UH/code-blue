@@ -1,5 +1,5 @@
 # base image
-FROM node:11.0.0
+FROM node:10.15
 
 # install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
