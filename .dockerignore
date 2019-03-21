@@ -1,2 +1,7 @@
 node_modules
 .git
+.gitignore
+.nvmrc
+docker-compose.yml
+Spring2019CatalogProject24.pdf
+.DS_Store
