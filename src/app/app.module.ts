@@ -10,6 +10,7 @@ import {FindComponent} from './find/find.component';
 
 // Services
 import {FhirService} from './service/fhir.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {FhirService} from './service/fhir.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [FhirService],
   bootstrap: [AppComponent]

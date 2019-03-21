@@ -1,7 +1,6 @@
 version: '3.7'
 
 services:
-
   container:
     container_name: container
     build:
@@ -9,6 +8,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
+      # - '/usr/src/app/node_modules'
     ports:
       - '4200:4200'
