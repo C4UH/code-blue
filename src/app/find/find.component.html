@@ -1,5 +1,11 @@
 <div class="center">
-  <h2>PDMP Report</h2>
-  <input [(ngModel)]="patientId" [ngModelOptions]="{standalone: true}" placeholder="Patient ID" type="text"/>
-  <button type="submit" (click)="onPatientFind()">Find</button>
+  <mat-form-field appearance="outline">
+    <mat-label>Find Patient By ID</mat-label>
+    <mat-icon matSuffix>search</mat-icon>
+    <input [(ngModel)]="patientId" [ngModelOptions]="{standalone: true}" matInput placeholder="Patient ID">
+  </mat-form-field>
+  <button type="submit" (click)="onPatientFind()" mat-raised-button color="primary">Find</button>
+
+  <!-- <input [(ngModel)]="patientId" [ngModelOptions]="{standalone: true}" placeholder="Patient ID" type="text"/> -->
+  <!-- <button type="submit" (click)="onPatientFind()">Find</button> -->
 </div>

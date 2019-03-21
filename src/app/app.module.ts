@@ -10,7 +10,8 @@ import {FindComponent} from './find/find.component';
 
 // Services
 import {FhirService} from './service/fhir.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule, MatButtonModule, MatIconModule, MatToolbarModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 
 
 @NgModule({
@@ -24,6 +25,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [FhirService],
   bootstrap: [AppComponent]
