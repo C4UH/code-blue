@@ -1,5 +1,23 @@
-<h2 >PDMP Report for Patient ID: {{ patientId }}</h2>
-<textarea class="report-display"> {{ reportText }} </textarea>
+<br>
 <div class="center">
-  <button class="center" type="submit" (click)="downloadPDF()">Download PDF</button>
+    <mat-card>
+ 
+        <h2 >PDMP Report for Patient ID: {{ patientId }}</h2>
+      </mat-card>
 </div>
+
+<br>
+
+<div class="center">
+    <mat-card>
+        <mat-card-content>
+          {{ reportText }}
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+<br>
+<div class="center">
+    <button class="center" type="submit" (click)="downloadPDF()" mat-raised-button color="primary">Download PDF</button>
+  </div>

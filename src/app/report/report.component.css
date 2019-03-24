@@ -11,4 +11,11 @@
   padding: 1%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+
 }
+
+.centerCard {
+  margin-left: auto;
+  margin-right: auto; 
+}
+
