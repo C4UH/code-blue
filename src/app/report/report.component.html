@@ -1,17 +1,15 @@
 <br>
 <div class="center">
     <mat-card>
- 
         <h2 >PDMP Report for Patient ID: {{ patientId }}</h2>
       </mat-card>
 </div>
 
 <br>
 
-<div class="center">
+<div>
     <mat-card>
-        <mat-card-content>
-          {{ reportText }}
+        <mat-card-content [innerHTML]=reportText>
         </mat-card-content>
     </mat-card>
 </div>

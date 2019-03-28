@@ -29,27 +29,22 @@ export class ReportComponent implements OnInit {
    *  Downloads the PDMP report into a PDF file
    */
   downloadPDF() {
-    // TODO: Download PDMP report to PDF
     const doc = new jsPDF({
-  orientation: 'portrait'
-});
-  // split the report into 220mm length lines of splitTextToSize
-  // splitText is an array of these lines of text
-    var splitText = doc.splitTextToSize(this.reportText,220);
-    var pageHeight = doc.internal.pageSize.height;
-    doc.setFontType("normal");
-    doc.setFontSize("12");
-    var y = 10;   // set the top margin in mm
-    // iterate over the splitText array writing a line of text into the doc
-    for (var i = 0; i < splitText.length; i++) {
-        if (y > 280) {  // y is > 280mm down on the page, add a new page
-            y = 10;
-            doc.addPage();
-        }
-        doc.text(15, y, splitText[i]);  // write line of text into doc
-        y = y + 7;  // move the y pointer to the next line
-    }
+      orientation: 'portrait'
+    });
 
-    doc.save('Test.pdf');  // save the doc to a file
+    doc.setFontType('normal');
+    doc.setFontSize('20');
+
+    const pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+    const pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+    const title = `PDMP report for Patient ID: ${this.patientId}`;
+
+    // Add a title page to the PDF.
+    doc.text(title, pageWidth / 2, pageHeight / 2, 'center')
+
+    // Render reportText as html. This means we can use HTML in the report instead of plain text.
+    doc.fromHTML(this.reportText);
+    doc.save(`${this.patientId}.pdf`);  // save the doc to a file
   }
 }
