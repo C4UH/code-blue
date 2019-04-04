@@ -1,21 +1,45 @@
-
-.center{
+.center {
   text-align: center;
+  justify-content: center;
 }
 
-.report-display {
-  height:20rem;
-  width:95%;
-  border:1px solid grey;
-  overflow:auto;
-  padding: 1%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
+.no-shadow {
+  box-shadow: none;
 }
 
-.centerCard {
-  margin-left: auto;
-  margin-right: auto; 
+.medication {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  line-height: 1.2rem;
+  margin: 10px 0;
+  text-align: left;
 }
 
+.line {
+  border: 1px #bfbfbf dashed;
+  margin: 10px 0 0 0;
+}
+
+#report {
+  height: 100%;
+  max-width: 90%;
+  margin: auto;
+}
+
+#report-title {
+  margin: 20px 0;
+}
+
+#report-data {
+  border: 1px #9a9a9a solid;
+  padding: 12px;
+  max-height: 600px;
+  max-width: 800px;
+  overflow: scroll;
+  margin: auto;
+}
+
+#report-button {
+  margin-top: 12px;
+}
