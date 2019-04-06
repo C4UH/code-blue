@@ -2,7 +2,7 @@
   <mat-form-field appearance="outline">
     <mat-label>Find Patient By ID</mat-label>
     <mat-icon matSuffix>search</mat-icon>
-    <input [(ngModel)]="patientId" [ngModelOptions]="{standalone: true}" matInput placeholder="Patient ID">
+    <input (keyup.enter)="onPatientFind()" [(ngModel)]="patientId" [ngModelOptions]="{standalone: true}" matInput placeholder="Patient ID">
   </mat-form-field>
   <button type="submit" (click)="onPatientFind()" mat-raised-button color="primary">Find</button>
 </div>

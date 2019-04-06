@@ -1,21 +1,23 @@
-<br>
-<div class="center">
-    <mat-card>
-        <h2 >PDMP Report for Patient ID: {{ patientId }}</h2>
-      </mat-card>
-</div>
-
-<br>
-
 <div>
-    <mat-card>
-        <mat-card-content [innerHTML]=reportText>
-        </mat-card-content>
-    </mat-card>
+  <mat-card id="report" class="center no-shadow"> 
+    <mat-card-header id="report-title" class="center">
+      <mat-card-title>PDMP Report for Patient ID: {{ patientId }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content id="report-data" *ngIf="meds && meds.error">
+      <div class="medication">
+        <span>{{ meds.error }}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-content id="report-data" *ngIf="meds && meds.medications">
+      <div class="medication" *ngFor="let m of meds.medications">
+        <span class="medication-name">{{ m.name }}</span>
+        <span class="medication-code" *ngFor="let c of m.codes">{{ c }}</span>
+        <span class="medication-date">{{ m.date }}</span>
+        <hr class="line">
+      </div>
+    </mat-card-content>
+    <mat-card-actions id="report-button">
+      <button (click)="downloadPDF()" mat-raised-button color="primary">Download PDF</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
-
-
-<br>
-<div class="center">
-    <button class="center" type="submit" (click)="downloadPDF()" mat-raised-button color="primary">Download PDF</button>
-  </div>
