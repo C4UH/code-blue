@@ -1,7 +1,7 @@
 export class Medication {
   name: string
   codes: string[]
-  date: string
+  date: Date
 }
 
 export class Medications {
