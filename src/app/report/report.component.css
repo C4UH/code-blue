@@ -40,6 +40,11 @@
   margin: auto;
 }
 
+#one-year-toggle {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
 #report-button {
   margin-top: 12px;
 }
