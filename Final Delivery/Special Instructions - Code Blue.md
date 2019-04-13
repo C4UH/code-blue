@@ -1,4 +1,4 @@
-### Special Instructions
+# Special Instructions
 ---
 **Step 1:** Locate ***Dockerfile*** and ***docker-compose.yml*** in the  [SMART-on-FHIR-App-to-pull-PDMP code repo](https://github.gatech.edu/gt-cs6440-hit-spring2019/SMART-on-FHIR-App-to-pull-PDMP)  to see the specific requirement setup for running the project.
 
