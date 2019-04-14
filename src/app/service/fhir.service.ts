@@ -43,11 +43,11 @@ export class FhirService {
     const medications = data.map(entry => {
       let medication = new Medication();
       medication.name = entry.text.div.replace(/<\/?[^>]+(>|$)/g, "").trim(); // remove HTML
-      medication.date = 'Handed over date: ' + entry.whenHandedOver;
+      medication.date = new Date(entry.whenHandedOver);
       medication.codes = [];
       entry.medicationCodeableConcept.coding.forEach(drugCode => {
         if (drugCode.system == 'http://www.nlm.nih.gov/research/umls/rxnorm') {
-          medication.codes.push('RxNorm code: ' + drugCode.code);
+          medication.codes.push(drugCode.code);
         }
       });
 

@@ -12,6 +12,7 @@ import { Medications } from './Medication';
 export class ReportComponent implements OnInit {
   patientId: string;
   meds: Medications;
+  originalMeds: Medications;
 
   constructor(private route: ActivatedRoute, private fhirService: FhirService) {
   }
@@ -22,8 +23,25 @@ export class ReportComponent implements OnInit {
     console.log(`Loading PDMP report for patient ID: ${this.patientId}`);
     this.fhirService.getPDMP(this.patientId)
       .then(res => {
-        this.meds = res;
+        this.meds = Object.create(res); // prevent pass by reference
+        this.originalMeds = Object.create(res); // prevent pass by reference
+        // trigger toggle by default
+        this.onYearToggle({checked: true});
       });
+  }
+
+  onYearToggle(event) {
+    const { medications } = this.meds;
+    if(medications.length > 0) {
+      if(event.checked) {
+        const startDate = medications[0].date;
+        const oneYearAgo = new Date(startDate.getFullYear() - 1, startDate.getMonth(), startDate.getDay());
+        const oneYearMeds = medications.filter(med => med.date >= oneYearAgo);
+        this.meds.medications = oneYearMeds;
+      } else {
+        this.meds.medications = this.originalMeds.medications;
+      }
+    }
   }
 
   /**
@@ -72,10 +90,10 @@ export class ReportComponent implements OnInit {
       pdf.text(medications[i].name, leftMargin, currentPos);
       currentPos += 5;
       for(let j = 0; j < medications[i].codes.length; j++) {
-        pdf.text(medications[i].codes, leftMargin, currentPos);
+        pdf.text('RxNorm code: ' + medications[i].codes, leftMargin, currentPos);
         currentPos += 5;
       }
-      pdf.text(medications[i].date, leftMargin, currentPos);
+      pdf.text('Handed over date: ' + medications[i].date, leftMargin, currentPos);
       currentPos += 5;
       pdf.line(0, currentPos, 210, currentPos)
       currentPos += 7;

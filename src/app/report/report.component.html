@@ -11,12 +11,19 @@
     <mat-card-content id="report-data" *ngIf="meds && meds.medications">
       <div class="medication" *ngFor="let m of meds.medications">
         <span class="medication-name">{{ m.name }}</span>
-        <span class="medication-code" *ngFor="let c of m.codes">{{ c }}</span>
-        <span class="medication-date">{{ m.date }}</span>
+        <span class="medication-code" *ngFor="let c of m.codes">RxNorm code: {{ c }}</span>
+        <span date="" class="medication-date">Handed over date: {{ m.date.toISOString().split('T')[0] }}</span>
         <hr class="line">
       </div>
     </mat-card-content>
     <mat-card-actions id="report-button">
+      <mat-slide-toggle
+        id="one-year-toggle"
+        color="primary"
+        checked="checked"
+        (change)="onYearToggle($event)">
+        One Year Limit
+      </mat-slide-toggle>
       <button (click)="downloadPDF()" mat-raised-button color="primary">Download PDF</button>
     </mat-card-actions>
   </mat-card>
