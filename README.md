@@ -7,7 +7,7 @@ SMART-on-FHIR App to pull PDMP
 
 1. Build and run using Docker Compose in the root directory with the following command:
 
-`docker-compose up -d --build`
+`docker-compose up --build`
 
 2. Open localhost:4200 in an internet browser.
 
