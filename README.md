@@ -1,14 +1,22 @@
 # SMART-on-FHIR-App-to-pull-PDMP
 SMART-on-FHIR App to pull PDMP
 
+[Final Deliverable folder](https://github.gatech.edu/gt-cs6440-hit-spring2019/SMART-on-FHIR-App-to-pull-PDMP/tree/master/Final%20Delivery)
+
 # Docker setup
 
-Just build and deplot using compose in the directory using this command
+1. Build and run using Docker Compose in the root directory with the following command:
 
 `docker-compose up -d --build`
 
-open localhost:4200
+2. Open localhost:4200 in an internet browser.
 
+[Docker Compose file](https://github.gatech.edu/gt-cs6440-hit-spring2019/SMART-on-FHIR-App-to-pull-PDMP/blob/master/docker-compose.yml)
+
+[Dockerfile](https://github.gatech.edu/gt-cs6440-hit-spring2019/SMART-on-FHIR-App-to-pull-PDMP/blob/master/Dockerfile)
+
+
+# Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
