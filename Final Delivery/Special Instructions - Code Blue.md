@@ -15,7 +15,7 @@
 **Step 5:**  Enter the sample synthetic patient ID “smart-1137192”and click ![alt text](https://i.imgur.com/a2aAREG.png?1).
 
 
-**Step 6:**  The history of prescription drug records will be presented on the webpage arranged in reverse chronological order.You may also have the option of only having one year history by toggling the **"One Year Limit"** switch button.
+**Step 6:**  The history of prescription drug records will be presented on the webpage arranged in reverse chronological order. You may also have the option of only having one year history by toggling the **"One Year Limit"** switch button.
 
 
 **Step 7:**  Click **"Download PDF"**![alt text](https://i.imgur.com/EcAKY4J.png?1) button to export the drug prescription records and it can be saved in local computer.
